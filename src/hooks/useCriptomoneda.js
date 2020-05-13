@@ -21,6 +21,8 @@ const Select = styled.select`
   font-size: 1.2rem;
 `;
 const useCriptomoneda = (label, stateInitial, opciones) => {
+  console.log(opciones);
+
   //
   const [state, actualizarState] = useState(stateInitial);
 
