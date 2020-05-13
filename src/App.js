@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import imagen from './cryptomonedas.png';
 import Formulario from './components/Formulario';
 import Cotizacion from './components/Cotizacion';
+import Spinner from './components/Spinner';
 
 const Contenedor = styled.div`
   max-width: 900px;
@@ -70,6 +71,13 @@ function App() {
     cotizarCriptomoneda();
   }, [moneda, criptomoneda]);
 
+  //
+  const componente = cargando ? (
+    <Spinner />
+  ) : (
+    <Cotizacion resultado={resultado} />
+  );
+
   return (
     <Contenedor>
       <div>
@@ -81,7 +89,7 @@ function App() {
           guardarMoneda={guardarMoneda}
           guardarCriptoMoneda={guardarCriptoMoneda}
         />
-        <Cotizacion resultado={resultado} />
+        {componente}
       </div>
     </Contenedor>
   );

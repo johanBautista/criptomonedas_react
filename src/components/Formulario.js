@@ -30,9 +30,7 @@ const Formulario = ({ guardarMoneda, guardarCriptoMoneda }) => {
   const [error, guardarError] = useState(false);
   //
   const MONEDAS = [
-    { codigo: 'ARS', nombre: 'Peso, Argentina' },
     { codigo: 'CNY', nombre: 'Yuan, China ' },
-    { codigo: 'COL', nombre: 'Peso, Colombia' },
     { codigo: 'USD', nombre: 'Dolar, USA' },
     { codigo: 'EUR', nombre: 'Euro , España' },
     { codigo: 'JPY', nombre: 'Yen, Japón ' },
@@ -48,7 +46,7 @@ const Formulario = ({ guardarMoneda, guardarCriptoMoneda }) => {
     '',
     listacripto,
   );
-  
+
   //
   useEffect(() => {
     const consultarAPI = async () => {
