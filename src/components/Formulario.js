@@ -33,11 +33,7 @@ const Formulario = () => {
     { codigo: 'GBP', nombre: 'Libra, Inglaterra' },
   ];
   //
-  const [moneda, SelectMonedas, actualizarState] = useMoneda(
-    'Elige tu Moneda',
-    '',
-    MONEDAS,
-  );
+  const [moneda, SelectMonedas] = useMoneda('Elige tu Moneda', '', MONEDAS);
 
   return (
     <form>
