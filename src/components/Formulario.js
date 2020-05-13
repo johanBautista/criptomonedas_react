@@ -23,7 +23,7 @@ const Boton = styled.input`
   }
 `;
 
-const Formulario = () => {
+const Formulario = ({ guardarMoneda, guardarCriptoMoneda }) => {
   //
   const [listacripto, guardarCriptomonedas] = useState([]);
   //
@@ -48,6 +48,7 @@ const Formulario = () => {
     '',
     listacripto,
   );
+  
   //
   useEffect(() => {
     const consultarAPI = async () => {
@@ -58,6 +59,7 @@ const Formulario = () => {
     };
     consultarAPI();
   }, []);
+
   //
   const cotizarMoneda = (e) => {
     e.preventDefault();
@@ -68,6 +70,8 @@ const Formulario = () => {
     }
     //
     guardarError(false);
+    guardarMoneda(moneda);
+    guardarCriptoMoneda(criptomonedas);
   };
   return (
     <form onSubmit={cotizarMoneda}>

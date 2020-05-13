@@ -21,8 +21,6 @@ const Select = styled.select`
   font-size: 1.2rem;
 `;
 const useCriptomoneda = (label, stateInitial, opciones) => {
-  console.log(opciones);
-
   //
   const [state, actualizarState] = useState(stateInitial);
 
@@ -33,7 +31,7 @@ const useCriptomoneda = (label, stateInitial, opciones) => {
         <option>-- Seleccione --</option>
         {opciones.map((opcion) => (
           <option key={opcion.CoinInfo.id} value={opcion.CoinInfo.Name}>
-          {opcion.CoinInfo.FullName}
+            {opcion.CoinInfo.FullName}
           </option>
         ))}
       </Select>
