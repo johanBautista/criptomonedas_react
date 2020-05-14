@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styled from '@emotion/styled';
 
 const ResultadoDiv = styled.div`
@@ -34,5 +36,9 @@ const Cotizacion = ({resultado}) => {
         </ResultadoDiv>
      );
 }
+
+Cotizacion.protoTypes = {
+    mensaje: PropTypes.object.isRequired,
+  };
  
 export default Cotizacion;

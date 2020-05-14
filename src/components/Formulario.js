@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import styled from '@emotion/styled';
 import useMoneda from '../hooks/useMoneda';
 import useCriptomoneda from '../hooks/useCriptomoneda';
@@ -79,6 +81,11 @@ const Formulario = ({ guardarMoneda, guardarCriptoMoneda }) => {
       <Boton type="submit" value="Calcular" />
     </form>
   );
+};
+
+Formulario.protoTypes = {
+  guardarMoneda: PropTypes.func.isRequired,
+  guardarCriptoMoneda: PropTypes.func.isRequired,
 };
 
 export default Formulario;
